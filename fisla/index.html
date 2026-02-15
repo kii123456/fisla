@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fisla.com 💖</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #b30059;
+            font-size: 42px;
+        }
+
+        p {
+            color: #4d0026;
+            font-size: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 280px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.12);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        #secret {
+            display: none;
+            font-size: 26px;
+            color: #800040;
+            margin-top: 30px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 24px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>💖 fisla.com 💖</h1>
+
+    <p>
+        Happy Valentine’s Day my love 🌹<br>
+        Cyuzuzo Isla, you are my heart, my peace, and my forever 💕
+    </p>
+
+    <div class="gallery">
+        <img src="C:\Users\HP\OneDrive\Desktop\827d4e731a96c6ad997b2f5fc4d2c690.jpg" onclick="showLove()"
+            alt="Love kisses">
+        <img src="C:\Users\HP\OneDrive\Desktop\927ccdce8fdfb38b113d85529bf7554a.jpg" onclick="showLove()"
+            alt="Hand drawn hearts">
+    </div>
+
+    <div id="secret">
+        💌 only me and you mi alma 💌<br>
+        — Yours, Fiacre ❤️
+    </div>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://files.catbox.moe/9m4j9n.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function showLove() {
+            document.getElementById("secret").style.display = "block";
+        }
+
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }, 400);
+    </script>
+
+</body>
+
+</html>
